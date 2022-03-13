@@ -1,0 +1,717 @@
+{
+  "info": {
+    "_postman_id": "7a2c83de-abb4-4520-a920-acfe4a56349e",
+    "name": "exam node",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "signup",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"user\",\n    \"email\":\"mohamedouf504@gmail.com\",\n    \"password\":\"123\",\n    \"confirmPassword\":\"123\",\n    \"phone\":\"0100000000\",\n    \"age\":34,\n    \"location\":\"eg\"\n\n\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users/signup",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "users", "signup"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get user",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYyMTJjMjA2ZDRiZmRhMzlhNWQ1NTI2ZiIsIm5hbWUiOiJ4IiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRtUFdUY2QwN2MwdXhySnN1dTZjV2F1WXp5VHZxT1Y5SS5BLzJqaXlON3hmS1loaGhZUWhmZSIsImFnZSI6MTExLCJyb2xlIjoiYWRtaW4iLCJibG9jayI6ZmFsc2UsImFjdGl2ZSI6dHJ1ZSwiY3JlYXRlZEF0IjoiMjAyMi0wMi0yMFQyMjozNDo0Ni4zMzhaIiwidXBkYXRlZEF0IjoiMjAyMi0wMi0yMFQyMjo0Nzo0NC41NzBaIiwiX192IjowfSwiaWF0IjoxNjQ1Mzk3MzU2LCJleHAiOjE2NTMxNzMzNTZ9.IpcGslgVBkJOSaAeLPSoTF1cL2Z7EgJiCfuVrJL5Lh0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users/62139e8c6e0eb8f1bf48dde2",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "users", "62139e8c6e0eb8f1bf48dde2"],
+              "query": [
+                {
+                  "key": "age[lte]",
+                  "value": "26",
+                  "disabled": true
+                },
+                {
+                  "key": "fields",
+                  "value": "verify",
+                  "disabled": true
+                },
+                {
+                  "key": "sort",
+                  "value": "name,age,",
+                  "disabled": true
+                },
+                {
+                  "key": "verify",
+                  "value": "true",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\":\"admin@gmail.com\",\n    \"password\":\"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "users", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "forgetPassword",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\":\"mohamedouf504@gmail.com\"\n\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users/forgotPassword",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "users", "forgotPassword"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "resetpasword",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"password\":\"1111\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users/resetPassword/3c3627cb033f7117",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "resetPassword",
+                "3c3627cb033f7117"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updatePassword",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiNjIwZDFiOTNhYTZhYmFjZTYwNzhmMjM2IiwiaWF0IjoxNjQ1MDUwMDI1LCJleHAiOjE2NTI4MjYwMjV9.m4UbfuseO0gc7AZ8114vwyI6xOWQlRBNXGO-YeM41Dw",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"password\":\"1111\",\n    \"newPassword\":\"123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users/updateMyPassword",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "users", "updateMyPassword"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateMe",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYyMTJjMjA2ZDRiZmRhMzlhNWQ1NTI2ZiIsIm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkbVBXVGNkMDdjMHV4ckpzdXU2Y1dhdVl6eVR2cU9WOUkuQS8yaml5Tjd4ZktZaGhoWVFoZmUiLCJhZ2UiOjM0LCJyb2xlIjoidXNlciIsImJsb2NrIjpmYWxzZSwiYWN0aXZlIjp0cnVlLCJjcmVhdGVkQXQiOiIyMDIyLTAyLTIwVDIyOjM0OjQ2LjMzOFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAyLTIwVDIyOjM0OjQ2LjMzOFoiLCJfX3YiOjB9LCJpYXQiOjE2NDUzOTY0OTYsImV4cCI6MTY1MzE3MjQ5Nn0.29eJT4uYTWJRB2ffK61ePsBgC0-qqdA_4yeUWGNLEsU",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"age\" :\"111\" ,\n    \"name\":\"xzz\"\n\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users/resetPassword/6929fb5d9cda0cc74c47f7506d2b373d3b9bcc429dd99ffe7bd787d4bc9e",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "resetPassword",
+                "6929fb5d9cda0cc74c47f7506d2b373d3b9bcc429dd99ffe7bd787d4bc9e"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete user",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYyMTJjMjA2ZDRiZmRhMzlhNWQ1NTI2ZiIsIm5hbWUiOiJ4IiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRtUFdUY2QwN2MwdXhySnN1dTZjV2F1WXp5VHZxT1Y5SS5BLzJqaXlON3hmS1loaGhZUWhmZSIsImFnZSI6MTExLCJyb2xlIjoiYWRtaW4iLCJibG9jayI6ZmFsc2UsImFjdGl2ZSI6dHJ1ZSwiY3JlYXRlZEF0IjoiMjAyMi0wMi0yMFQyMjozNDo0Ni4zMzhaIiwidXBkYXRlZEF0IjoiMjAyMi0wMi0yMFQyMjo0Nzo0NC41NzBaIiwiX192IjowfSwiaWF0IjoxNjQ1Mzk3NDEyLCJleHAiOjE2NTMxNzM0MTJ9.ak_KpNKZsdqfxr9RcpEziAPk8lJmfuPU-YXI7IOLtEI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users/6212c206d4bfda39a5d5526f ",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "users", "6212c206d4bfda39a5d5526f "]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete Me",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYyMTJjMjA2ZDRiZmRhMzlhNWQ1NTI2ZiIsIm5hbWUiOiJ4IiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ0czdrNGRPZWxsU1NKa1dud3NEMU11d2xNQTlOOExueE92NlZMdnUvRnlDaFBNR3NLUFVTaSIsImFnZSI6MTExLCJyb2xlIjoiYWRtaW4iLCJibG9jayI6ZmFsc2UsImFjdGl2ZSI6dHJ1ZSwiY3JlYXRlZEF0IjoiMjAyMi0wMi0yMFQyMjozNDo0Ni4zMzhaIiwidXBkYXRlZEF0IjoiMjAyMi0wMi0yMVQwMDoyMzo0Ny44MzBaIiwiX192IjowLCJwYXNzd29yZENoYW5nZWRBdCI6IjIwMjItMDItMjFUMDA6MjM6NDYuOTU4WiJ9LCJpYXQiOjE2NDU0MDMwNDUsImV4cCI6MTY1MzE3OTA0NX0.9Ga_LMGxtF083piCXf6c70BaiAbEjKRzlop8JFlu42s",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users/deleteMe",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "users", "deleteMe"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "users/updateMyPassword",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYyMTJjMjA2ZDRiZmRhMzlhNWQ1NTI2ZiIsIm5hbWUiOiJ4IiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRtUFdUY2QwN2MwdXhySnN1dTZjV2F1WXp5VHZxT1Y5SS5BLzJqaXlON3hmS1loaGhZUWhmZSIsImFnZSI6MTExLCJyb2xlIjoiYWRtaW4iLCJibG9jayI6ZmFsc2UsImFjdGl2ZSI6dHJ1ZSwiY3JlYXRlZEF0IjoiMjAyMi0wMi0yMFQyMjozNDo0Ni4zMzhaIiwidXBkYXRlZEF0IjoiMjAyMi0wMi0yMFQyMjo0Nzo0NC41NzBaIiwiX192IjowfSwiaWF0IjoxNjQ1NDAyOTI3LCJleHAiOjE2NTMxNzg5Mjd9.2xU0QJVhcjsqE3dckX4dqRsE3f8i4_7gGlspknYEr4g",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"password\":\"123\",\n    \"newPassword\":\"123456\"\n\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users/updateMyPassword",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "users", "updateMyPassword"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "restoreUser",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYyMTJjMjA2ZDRiZmRhMzlhNWQ1NTI2ZiIsIm5hbWUiOiJ4IiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ0czdrNGRPZWxsU1NKa1dud3NEMU11d2xNQTlOOExueE92NlZMdnUvRnlDaFBNR3NLUFVTaSIsImFnZSI6MTExLCJyb2xlIjoiYWRtaW4iLCJibG9jayI6ZmFsc2UsImFjdGl2ZSI6dHJ1ZSwiY3JlYXRlZEF0IjoiMjAyMi0wMi0yMFQyMjozNDo0Ni4zMzhaIiwidXBkYXRlZEF0IjoiMjAyMi0wMi0yMVQwMDoyMzo0Ny44MzBaIiwiX192IjowLCJwYXNzd29yZENoYW5nZWRBdCI6IjIwMjItMDItMjFUMDA6MjM6NDYuOTU4WiJ9LCJpYXQiOjE2NDU0MDMwNDUsImV4cCI6MTY1MzE3OTA0NX0.9Ga_LMGxtF083piCXf6c70BaiAbEjKRzlop8JFlu42s",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users/6212c206d4bfda39a5d5526f",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "users", "6212c206d4bfda39a5d5526f"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "admin list",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYyMTM4MTY2OTY1NDJjY2E4YzVmOTVkOCIsIm5hbWUiOiJ1c2VyIiwiZW1haWwiOiJtb2hhbWVkb3VmNTA0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJDh6YWJuOE0zN2dPZlZQaGl3OGFXd3VZRWpoVVJCUktZUXluaHVhZHg0S0ZiM2R0cDFXblRxIiwiYWdlIjozNCwicm9sZSI6InN1cGVyQWRtaW4iLCJibG9jayI6ZmFsc2UsImFjdGl2ZSI6dHJ1ZSwiY3JlYXRlZEF0IjoiMjAyMi0wMi0yMVQxMjoxMToxOC45MjdaIiwidXBkYXRlZEF0IjoiMjAyMi0wMi0yMVQxMjoxMjoyNC41MTFaIiwiX192IjowLCJwYXNzd29yZENoYW5nZWRBdCI6IjIwMjItMDItMjFUMTI6MTI6MjMuNzIzWiJ9LCJpYXQiOjE2NDU0NDYzNjUsImV4cCI6MTY1MzIyMjM2NX0.ReL5uRySlJ7_Uf5GX4xbDgXZnVqJvvTG9RLCRl4axdE",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users/superAdmin/Admins",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "users", "superAdmin", "Admins"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "deactivate",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYyMTM5ZThjNmUwZWI4ZjFiZjQ4ZGRlMiIsIm5hbWUiOiJ1c2VyIiwiZW1haWwiOiJtb2hhbWVkb3VmNTA0QGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJFBMamVPZUlsdkphZHNEVG45aFRYTnVHam1Nd3QxNk42dmY3em51TG1zTFJqSTZ6bTdMa3h5IiwiYWdlIjozNCwicm9sZSI6InVzZXIiLCJibG9jayI6ZmFsc2UsImRlYWN0aXZhdGUiOmZhbHNlLCJjcmVhdGVkQXQiOiIyMDIyLTAyLTIxVDE0OjE1OjQwLjg4MVoiLCJ1cGRhdGVkQXQiOiIyMDIyLTAyLTIxVDE0OjE2OjIxLjE3OFoiLCJfX3YiOjAsInZlcmlmeSI6dHJ1ZX0sImlhdCI6MTY0NTQ1Mjk4MSwiZXhwIjoxNjUzMjI4OTgxfQ.MVyxvmKLeZH43AUDcEFj_e4lAYTCqg0a4ixAp_xJxS0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users/deactivate",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "users", "deactivate"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "All Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "users"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "blockUser",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYyMTJjMjA2ZDRiZmRhMzlhNWQ1NTI2ZiIsIm5hbWUiOiJ4IiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ0czdrNGRPZWxsU1NKa1dud3NEMU11d2xNQTlOOExueE92NlZMdnUvRnlDaFBNR3NLUFVTaSIsImFnZSI6MTExLCJyb2xlIjoiYWRtaW4iLCJibG9jayI6ZmFsc2UsImFjdGl2ZSI6dHJ1ZSwiY3JlYXRlZEF0IjoiMjAyMi0wMi0yMFQyMjozNDo0Ni4zMzhaIiwidXBkYXRlZEF0IjoiMjAyMi0wMi0yMVQxNDoyNjoxNy42MTVaIiwiX192IjowLCJwYXNzd29yZENoYW5nZWRBdCI6IjIwMjItMDItMjFUMDA6MjM6NDYuOTU4WiIsImRlYWN0aXZhdGUiOmZhbHNlLCJpc0RlbGV0ZWQiOmZhbHNlfSwiaWF0IjoxNjQ1NDUzNTkxLCJleHAiOjE2NTMyMjk1OTF9.Eet429ePhAsVIxssPshv8oX0PT3HtKzFyZUhe5osQI0",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users/62139e8c6e0eb8f1bf48dde2",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "users", "62139e8c6e0eb8f1bf48dde2"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "posts",
+      "item": [
+        {
+          "name": "AllPost",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYyMTJjMjA2ZDRiZmRhMzlhNWQ1NTI2ZiIsIm5hbWUiOiJ4IiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ0czdrNGRPZWxsU1NKa1dud3NEMU11d2xNQTlOOExueE92NlZMdnUvRnlDaFBNR3NLUFVTaSIsImFnZSI6MTExLCJyb2xlIjoiYWRtaW4iLCJibG9jayI6ZmFsc2UsImFjdGl2ZSI6dHJ1ZSwiY3JlYXRlZEF0IjoiMjAyMi0wMi0yMFQyMjozNDo0Ni4zMzhaIiwidXBkYXRlZEF0IjoiMjAyMi0wMi0yMVQxNDoyNjoxNy42MTVaIiwiX192IjowLCJwYXNzd29yZENoYW5nZWRBdCI6IjIwMjItMDItMjFUMDA6MjM6NDYuOTU4WiIsImRlYWN0aXZhdGUiOmZhbHNlLCJpc0RlbGV0ZWQiOmZhbHNlfSwiaWF0IjoxNjQ1NDgxMDc4LCJleHAiOjE2NTMyNTcwNzh9.RRYnONrZUtk-6KiLKdDQoeC_b5_h1gxnsarq2MDEhXA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/posts/admin?sort=createBy",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "posts", "admin"],
+              "query": [
+                {
+                  "key": "sort",
+                  "value": "createBy"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "all posts/me",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYyMTJjMjA2ZDRiZmRhMzlhNWQ1NTI2ZiIsIm5hbWUiOiJ4IiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ0czdrNGRPZWxsU1NKa1dud3NEMU11d2xNQTlOOExueE92NlZMdnUvRnlDaFBNR3NLUFVTaSIsImFnZSI6MTExLCJyb2xlIjoiYWRtaW4iLCJibG9jayI6ZmFsc2UsImFjdGl2ZSI6dHJ1ZSwiY3JlYXRlZEF0IjoiMjAyMi0wMi0yMFQyMjozNDo0Ni4zMzhaIiwidXBkYXRlZEF0IjoiMjAyMi0wMi0yMVQxNDoyNjoxNy42MTVaIiwiX192IjowLCJwYXNzd29yZENoYW5nZWRBdCI6IjIwMjItMDItMjFUMDA6MjM6NDYuOTU4WiIsImRlYWN0aXZhdGUiOmZhbHNlLCJpc0RlbGV0ZWQiOmZhbHNlfSwiaWF0IjoxNjQ1NDgxNzcxLCJleHAiOjE2NTMyNTc3NzF9.IGVJDLmphXmNGUukhf37gzFYRmUH7pfSx57ognBBIho",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/posts/me",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "posts", "me"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updetePost",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYyMTJjMjA2ZDRiZmRhMzlhNWQ1NTI2ZiIsIm5hbWUiOiJ4IiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ0czdrNGRPZWxsU1NKa1dud3NEMU11d2xNQTlOOExueE92NlZMdnUvRnlDaFBNR3NLUFVTaSIsImFnZSI6MTExLCJyb2xlIjoiYWRtaW4iLCJibG9jayI6ZmFsc2UsImFjdGl2ZSI6dHJ1ZSwiY3JlYXRlZEF0IjoiMjAyMi0wMi0yMFQyMjozNDo0Ni4zMzhaIiwidXBkYXRlZEF0IjoiMjAyMi0wMi0yMVQxNDoyNjoxNy42MTVaIiwiX192IjowLCJwYXNzd29yZENoYW5nZWRBdCI6IjIwMjItMDItMjFUMDA6MjM6NDYuOTU4WiIsImRlYWN0aXZhdGUiOmZhbHNlLCJpc0RlbGV0ZWQiOmZhbHNlfSwiaWF0IjoxNjQ1NDgxNzcxLCJleHAiOjE2NTMyNTc3NzF9.IGVJDLmphXmNGUukhf37gzFYRmUH7pfSx57ognBBIho",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\":\"123\",\n    \"content\":\"newContent\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/posts/me/621412df27fb1332817dd881",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "posts", "me", "621412df27fb1332817dd881"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Posts",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYyMTJjMjA2ZDRiZmRhMzlhNWQ1NTI2ZiIsIm5hbWUiOiJ4IiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ0czdrNGRPZWxsU1NKa1dud3NEMU11d2xNQTlOOExueE92NlZMdnUvRnlDaFBNR3NLUFVTaSIsImFnZSI6MTExLCJyb2xlIjoiYWRtaW4iLCJibG9jayI6ZmFsc2UsImFjdGl2ZSI6dHJ1ZSwiY3JlYXRlZEF0IjoiMjAyMi0wMi0yMFQyMjozNDo0Ni4zMzhaIiwidXBkYXRlZEF0IjoiMjAyMi0wMi0yMVQxNDoyNjoxNy42MTVaIiwiX192IjowLCJwYXNzd29yZENoYW5nZWRBdCI6IjIwMjItMDItMjFUMDA6MjM6NDYuOTU4WiIsImRlYWN0aXZhdGUiOmZhbHNlLCJpc0RlbGV0ZWQiOmZhbHNlfSwiaWF0IjoxNjQ1NDgxNzcxLCJleHAiOjE2NTMyNTc3NzF9.IGVJDLmphXmNGUukhf37gzFYRmUH7pfSx57ognBBIho",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/posts/me/621412df27fb1332817dd881",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "posts", "me", "621412df27fb1332817dd881"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "posts/admin/by Admin",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYyMTJjMjA2ZDRiZmRhMzlhNWQ1NTI2ZiIsIm5hbWUiOiJ4IiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ0czdrNGRPZWxsU1NKa1dud3NEMU11d2xNQTlOOExueE92NlZMdnUvRnlDaFBNR3NLUFVTaSIsImFnZSI6MTExLCJyb2xlIjoiYWRtaW4iLCJibG9jayI6ZmFsc2UsImFjdGl2ZSI6dHJ1ZSwiY3JlYXRlZEF0IjoiMjAyMi0wMi0yMFQyMjozNDo0Ni4zMzhaIiwidXBkYXRlZEF0IjoiMjAyMi0wMi0yMVQxNDoyNjoxNy42MTVaIiwiX192IjowLCJwYXNzd29yZENoYW5nZWRBdCI6IjIwMjItMDItMjFUMDA6MjM6NDYuOTU4WiIsImRlYWN0aXZhdGUiOmZhbHNlLCJpc0RlbGV0ZWQiOmZhbHNlfSwiaWF0IjoxNjQ1NDgxNzcxLCJleHAiOjE2NTMyNTc3NzF9.IGVJDLmphXmNGUukhf37gzFYRmUH7pfSx57ognBBIho",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/posts/admin/621412dc27fb1332817dd875",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "posts",
+                "admin",
+                "621412dc27fb1332817dd875"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Reports",
+      "item": [
+        {
+          "name": "createReport",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYyMTJjMjA2ZDRiZmRhMzlhNWQ1NTI2ZiIsIm5hbWUiOiJ4IiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ0czdrNGRPZWxsU1NKa1dud3NEMU11d2xNQTlOOExueE92NlZMdnUvRnlDaFBNR3NLUFVTaSIsImFnZSI6MTExLCJyb2xlIjoiYWRtaW4iLCJibG9jayI6ZmFsc2UsImFjdGl2ZSI6dHJ1ZSwiY3JlYXRlZEF0IjoiMjAyMi0wMi0yMFQyMjozNDo0Ni4zMzhaIiwidXBkYXRlZEF0IjoiMjAyMi0wMi0yMVQxNDoyNjoxNy42MTVaIiwiX192IjowLCJwYXNzd29yZENoYW5nZWRBdCI6IjIwMjItMDItMjFUMDA6MjM6NDYuOTU4WiIsImRlYWN0aXZhdGUiOmZhbHNlLCJpc0RlbGV0ZWQiOmZhbHNlfSwiaWF0IjoxNjQ1NDgxNzcxLCJleHAiOjE2NTMyNTc3NzF9.IGVJDLmphXmNGUukhf37gzFYRmUH7pfSx57ognBBIho",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"reason\":\"badConstent\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/reports/621412dc27fb1332817dd875",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "reports", "621412dc27fb1332817dd875"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all/reports",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYyMTJjMjA2ZDRiZmRhMzlhNWQ1NTI2ZiIsIm5hbWUiOiJ4IiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ0czdrNGRPZWxsU1NKa1dud3NEMU11d2xNQTlOOExueE92NlZMdnUvRnlDaFBNR3NLUFVTaSIsImFnZSI6MTExLCJyb2xlIjoiYWRtaW4iLCJibG9jayI6ZmFsc2UsImFjdGl2ZSI6dHJ1ZSwiY3JlYXRlZEF0IjoiMjAyMi0wMi0yMFQyMjozNDo0Ni4zMzhaIiwidXBkYXRlZEF0IjoiMjAyMi0wMi0yMVQxNDoyNjoxNy42MTVaIiwiX192IjowLCJwYXNzd29yZENoYW5nZWRBdCI6IjIwMjItMDItMjFUMDA6MjM6NDYuOTU4WiIsImRlYWN0aXZhdGUiOmZhbHNlLCJpc0RlbGV0ZWQiOmZhbHNlfSwiaWF0IjoxNjQ1NDgxNzcxLCJleHAiOjE2NTMyNTc3NzF9.IGVJDLmphXmNGUukhf37gzFYRmUH7pfSx57ognBBIho",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/reports?sort=name&page=1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "reports"],
+              "query": [
+                {
+                  "key": "sort",
+                  "value": "name"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "1",
+                  "disabled": true
+                },
+                {
+                  "key": "age[glt]",
+                  "value": "25",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reports/check/",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjYyMTJjMjA2ZDRiZmRhMzlhNWQ1NTI2ZiIsIm5hbWUiOiJ4IiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ0czdrNGRPZWxsU1NKa1dud3NEMU11d2xNQTlOOExueE92NlZMdnUvRnlDaFBNR3NLUFVTaSIsImFnZSI6MTExLCJyb2xlIjoiYWRtaW4iLCJibG9jayI6ZmFsc2UsImFjdGl2ZSI6dHJ1ZSwiY3JlYXRlZEF0IjoiMjAyMi0wMi0yMFQyMjozNDo0Ni4zMzhaIiwidXBkYXRlZEF0IjoiMjAyMi0wMi0yMVQxNDoyNjoxNy42MTVaIiwiX192IjowLCJwYXNzd29yZENoYW5nZWRBdCI6IjIwMjItMDItMjFUMDA6MjM6NDYuOTU4WiIsImRlYWN0aXZhdGUiOmZhbHNlLCJpc0RlbGV0ZWQiOmZhbHNlfSwiaWF0IjoxNjQ1NDgxNzcxLCJleHAiOjE2NTMyNTc3NzF9.IGVJDLmphXmNGUukhf37gzFYRmUH7pfSx57ognBBIho",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\n\"Action\":\"block User\",\n\"status\":\"done\"\n\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/reports/check/62142a0d58e43593c5fddc10",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "reports",
+                "check",
+                "62142a0d58e43593c5fddc10"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
